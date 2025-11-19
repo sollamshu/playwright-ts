@@ -1,5 +1,5 @@
-import { test, expect } from '../fixtures/pageFixtures';
-import { standardUser, lockedOutUser } from '../../data/login.data';
+import { test } from '../fixtures/pageFixtures';
+import { standardUser } from '../../data/login.data';
 
 test.describe('SauceDemo Login Functionality @ui', () => {
 
@@ -17,23 +17,4 @@ test.describe('SauceDemo Login Functionality @ui', () => {
     // Use the inventoryPage fixture
     await inventoryPage.verifyInventoryPageIsDisplayed();
   });
-
-  /*test('Failed Login with Locked Out User', async ({ loginPage }) => {
-    test.info().annotations.push({ type: 'story', description: 'B-12346: Locked User Error' });
-
-    await loginPage.loginWithCredentials(lockedOutUser.username, lockedOutUser.password);
-
-    // Verify the error message
-    const errorMessage = await loginPage.getErrorMessage();
-    expect(errorMessage).toContain(lockedOutUser.expectedError);
-  });
-
-  test('Failed Login with Invalid Password', async ({ loginPage }) => {
-    test.info().annotations.push({ type: 'story', description: 'B-12347: Invalid Password Error' });
-
-    await loginPage.loginWithCredentials(standardUser.username, 'wrongpassword');
-
-    const errorMessage = await loginPage.getErrorMessage();
-    expect(errorMessage).toContain('Username and password do not match');
-  });*/
 });
